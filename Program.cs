@@ -50,7 +50,7 @@ namespace LAPack
         {
             Console.WriteLine("Entry Matrix A");
             Console.WriteLine(a.GetArrayString());
-            Console.WriteLine("Right Rand Side");
+            Console.WriteLine("Right Hand Side");
             Console.WriteLine(b.GetArrayString());
 
             var solution = LinearAlgebra.Solve(a, b);
