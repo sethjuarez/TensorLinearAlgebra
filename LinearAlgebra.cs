@@ -48,7 +48,12 @@ namespace LAPack
             return bClone;
         }
 
+#if _WINDOWS
         [DllImport("liblapacke.dll")]
         static extern unsafe int LAPACKE_dgesv(int matrix_layout, int n, int nrhs, double* a, int lda, int* ipvt, double* bx, int ldb);
+#else
+        [DllImport("liblapacke.a")]
+        static extern unsafe int LAPACKE_dgesv(int matrix_layout, int n, int nrhs, double* a, int lda, int* ipvt, double* bx, int ldb);
+#endif
     }
 }
